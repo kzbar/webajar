@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.ajar.website",
+    "sha256_cert_fingerprints":
+    ["42:6C:53:C3:86:F3:58:77:A1:03:DD:28:0C:95:C3:46:EE:3E:05:1A:50:49:65:1A:8F:D2:50:4B:EA:DF:A7:61"]
+  }
+}]

@@ -1,0 +1,101 @@
+<div style="background-color: #e8edef" dir="rtl" class="m-2 z-depth-2 rounded-lg"
+  *ngIf="singleItem as value; else noItem">
+  <div class="properties-hero-area">
+    <div>
+      <ngx-gallery class="container_image" [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+    </div>
+    <div class="container">
+      <div class="row z-depth-1 rounded-lg">
+        <div class="col">
+          <div class="properties-content-area wow fadeInUp" data-wow-delay="200ms">
+
+            <div class="properties-content-info">
+              <h2>{{singleItem?.ad_Title}}</h2>
+              <h4 class="properties-rate">{{singleItem?.ad_Price}}</h4>
+
+              <div class="properties-location">
+                <p><i style="margin:6px" class="fa fa-map-marker" aria-hidden="true"></i> {{singleItem?.ad_Address}}</p>
+                <p><i style="margin: 6px" class="fa fa-map-marker" aria-hidden="true"></i> {{singleItem?.ad_Type}}</p>
+              </div>
+              <p>{{singleItem?.ad_Description}}</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="col">
+          <div class="information-area mb-80 wow fadeInUp" data-wow-delay="200ms">
+            <h4 class="mb-30" style="text-align: center">تفاصيل العقار</h4>
+            <div class="information-content rounded-lg">
+              <ul class="d-flex flex-wrap">
+                <li> <span class="span-color">رقم الاعلان</span> <span class="custom-span"> {{singleItem?.ad_No}}</span>
+                </li>
+                <li><span class="span-color">السعر</span> <span class="custom-span">{{singleItem?.ad_Price}} </span>
+                </li>
+                <li><span class="span-color">نوع العقار</span> <span class="custom-span">{{singleItem?.ad_Type}}</span>
+                </li>
+                <li> <span class="span-color">عدد الغرف</span> <span class="custom-span">{{singleItem?.ad_Room}}</span>
+                </li>
+                <li><span class="span-color">مساحة العقار</span> <span class="custom-span">M2
+                    {{singleItem?.ad_Area}}</span></li>
+                <li> <span class="span-color">طريقة الدفع</span> <span
+                    class="custom-span">{{singleItem?.ad_Installment_Allowed}}</span></li>
+                <li> <span class="span-color">حالة العقار</span> <span
+                    class="custom-span">{{singleItem?.ad_Property_Status}}</span></li>
+                <li><span class="span-color">للتواصل</span><a
+                    href="https://api.whatsapp.com/send?phone={{phone}}&text=لدي استفسار  بخصوص اعلان {{singleItem?.ad_Title}}">
+                    <span class="custom-span">{{singleItem?.ad_Phone}}</span></a>
+                </li>
+                <!-- <li> <span class="custom-span">{{singleItem?.ad_Residential_Services}}</span><span class="span-color">خدمات المجمع</span> -->
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="container">
+      <div class="rehomes-property-sidebar-area" style="text-align: center">
+        <div class="properties-single-widget-area" id="menu">
+          <h4 class="widget-title m-5 rounded-lg " style="text-align: center;padding: 12px;">
+            آخر العروض</h4>
+          <ul *ngFor="let itemss of listRecent" class="single-recent-post  align-items-center"
+            style="text-align: center">
+            <li style="background-color: rgba(240, 247, 250, 0.945)" class="rounded m-2">
+              <div class="properties-post-thumb ">
+                <a [routerLink]="['/شقة-للبيع-في-اسطنبول',itemss.ad_No]" (click)="setNewItem(itemss)"><img
+                    class="rounded" style="height: 100px; width: 150px;" src="{{itemss.ad_DefaultImage}}" alt=""></a>
+              </div>
+              <div class="post-content">
+                <h6>شقة للبيع</h6>
+                <p class="properties--location">
+                  <mdb-icon fas icon="map-marker-alt"></mdb-icon>{{itemss.ad_Address}}
+                </p>
+                <p class="properties-rent"><span class="custom-span">{{itemss.ad_Price}}</span></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<ng-template #noItem>
+  <header class="template_header">
+    <h1 class="text-center">{{message_loading}}</h1>
+  </header>
+  <div class="back_button" id="toggle-colours-button" (click)="toggleColours()">رجوع</div>
+</ng-template>
+<ng-template #customLoadingTemplate>
+      <div class="custom-class">
+        <h3>
+        </h3>
+      </div>
+</ng-template>
+
+
+

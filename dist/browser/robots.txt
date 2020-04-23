@@ -1,0 +1,19 @@
+# BEGIN XML-SITEMAP
+https://ajar.website/sitemap.xml
+https://ajar.website/sitemap_image.xml
+
+# END XML-SITEMAP
+
+User-agent: GoogleBot
+Disallow:/assets
+Crawl-delay: 10
+Disallow: /wp-admin/
+Disallow: /xmlrpc.php
+Disallow: /*.php$
+Disallow: *?replytocom
+
+sitemap: https://ajar.website/sitemap.xml
+sitemap: https://ajar.website/sitemap_image.xml
+
+User-agent: *‎
+Disallow:/assets

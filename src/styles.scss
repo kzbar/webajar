@@ -1,0 +1,48 @@
+@import "~@angular/material/theming";
+
+// Include non-theme styles for core.
+@include mat-core();
+
+$mat-custom-green: (
+        50: #e8f1f5,
+        100: #c8e6c9,
+        200: #a5d6a7,
+        300: #81c2c7,
+        400: #66b1bb,
+        500: #0093C4,
+        600: #4392a0,
+        700: #38848e,
+        800: #2e787d,
+        900: #1b4e5e,
+        A100: #b9edf6,
+        A200: #69dcf0,
+        A400: #00c4e6,
+        A700: #00aac8,
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $dark-primary-text,
+                400: $dark-primary-text,
+                500: $light-primary-text,
+                600: $light-primary-text,
+                700: $light-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+                A100: $dark-primary-text,
+                A200: $light-primary-text,
+                A400: $light-primary-text,
+                A700: $light-primary-text
+        )
+);
+
+
+// Define a theme.
+$primary: mat-palette($mat-custom-green);
+$accent:  mat-palette($mat-pink, A200, A100, A400);
+
+$theme: mat-light-theme($primary, $accent);
+
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+

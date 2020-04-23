@@ -1,0 +1,123 @@
+<div class="rehomes-search-form-area wow fadeInUp rounded" data-wow-delay="200ms">
+  <div class="container">
+    <div class="search-advance">
+      <mat-form-field appearance="outline" class="spinner-container">
+        <mat-label style="color: white">عدد الغرف</mat-label>
+        <mat-select [(value)]="room">
+          <mat-option *ngFor="let room of rooms" [value]="room.value">
+            {{room.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="spinner-container">
+        <mat-label style="color: white">الطابق</mat-label>
+        <mat-select [(value)]="floor">
+          <mat-option *ngFor="let floor of floors" [value]="floor.value">
+            {{floor.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="spinner-container">
+        <mat-label style="color: white">الآثاث</mat-label>
+        <mat-select [(value)]="fun">
+          <mat-option>None</mat-option>
+          <mat-option value="مفروش">مفروش</mat-option>
+          <mat-option value="غير مفروش">غير مفروش</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="spinner-container">
+        <mat-label style="color: white">نوع الاجار</mat-label>
+        <mat-select [(value)]="type">
+          <mat-option>None</mat-option>
+          <mat-option value="سنوي">سنوي</mat-option>
+          <mat-option value="شهري">شهري</mat-option>
+          <mat-option value="يومي">يومي</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+    </div>
+
+  </div>
+
+</div>
+<div class="container">
+  <button mat-button class="mat-raised-button mat-primary buttons" style="margin: 12px" (click)="clearSearch()">
+    الكل
+  </button>
+  <button mat-button class="mat-raised-button mat-primary buttons" style="margin: 12px" (click)="selectionChange()">
+    ابحث
+  </button>
+</div>
+<section class="rehome-house-sale-area section-padding-70">
+  <div *ngIf="listRent?.length > 0 ;else noItem" class="container">
+    <div class="row">
+      <div class="col-12 search-advance">
+        <div class="section-heading text-center wow fadeInUp" data-wow-delay="200ms">
+          <h1>{{title}}</h1>
+          <p></p>
+        </div>
+      </div>
+      <div *ngFor="let itemss of listRent" class="col-lg col-md-6 col-lg-4">
+        <div class="single-property-area wow fadeInUp" data-wow-delay="200ms">
+          <!-- Property Thumb -->
+          <a [routerLink]="['/شقة-للايجار-في-اسطنبول',itemss.ad_No]">
+            <div class="property-thumb">
+              <div class="watermarked">
+
+
+                <img style="height: 250px" src="{{itemss.ad_DefaultImage}}" alt="{{itemss.ad_Title}}">
+
+              </div>
+            </div>
+          </a>
+
+          <!-- Property Description -->
+          <div class="property-desc-area">
+            <!-- Property Title & Seller -->
+            <div class="property-title-seller  justify-content-between">
+              <!-- Title -->
+              <div class="property-title">
+                <h4>{{itemss.ad_Title}}</h4>
+                <!-- <p><i class="fa fa-map-marker" aria-hidden="true"></i></p> -->
+              </div>
+              <!-- Seller -->
+              <!-- <div class="property-seller">
+                    <p>الموقع</p>
+                    <h6>{{itemss.ad_Address}}</h6>
+                  </div> -->
+            </div>
+            <!-- Property Info -->
+            <div class="property-info-area d-flex flex-wrap">
+              <p> الطابق <span>{{itemss.ad_Floor}}</span></p>
+              <p> عدد الغرف <span>{{itemss.ad_Room}}</span></p>
+              <p> تاريخ <span>{{itemss.ad_Date}}</span></p>
+              <p> نوع الاجار <span>{{itemss.ad_Type}}</span></p>
+            </div>
+          </div>
+
+          <!-- Property Price -->
+          <div class="property-price">
+            <button [routerLink]="['/شقة-للايجار-في-اسطنبول', itemss.ad_No]" class="badge-rent mat-raised-button">شاهد
+              التفاصيل</button>
+            <p class="price">{{itemss.ad_Price}}</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <ng-template class="template_header" #noItem>
+    <h1 class="template_header">{{message}}</h1>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' 
+      ,primaryColour: '#009688', secondaryColour: '#009688', tertiaryColour: '#009688'}"
+      [template]="customLoadingTemplate">
+    </ngx-loading>
+  </ng-template>
+</section>

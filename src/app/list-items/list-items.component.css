@@ -1,0 +1,191 @@
+.mat-card-header-text {
+  text-align: right;
+  margin: 0px;
+  padding: 0px;
+}
+
+.mat-card-title {
+  text-align: right;
+  margin: 0px;
+  padding: 0px;
+}
+
+.course-actions {
+  text-align: center;
+}
+
+main {
+  margin-top: 30px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.row {
+  margin: auto;
+  text-align: center;
+}
+
+.spinner-container {
+  text-align: center;
+  margin-left: 25px;
+  margin-right: 25px;
+  border: #000000ba;
+  font-weight: 600;
+}
+.spinner-container-form{
+  box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+  text-align: center;
+  margin: auto;
+  border-radius: 24px;
+}
+.mat-form-field{
+  line-height: 2em;
+}
+.courses-panel {
+  margin: auto;
+  text-align: center;
+}
+
+.phone_home {
+  border-radius: 25px;
+}
+
+.card {
+  border: 1px;
+
+  border-radius: 2px;
+}
+
+.card-img-top {
+  height: 300px;
+}
+
+.card-body {
+  background: whitesmoke;
+}
+
+
+.featured_card_box {
+  width: auto;
+  height: 50px;
+  margin-top: 50px;
+  text-align: right;
+  margin: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+/* .container{
+  box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  padding-left: 0px;
+  padding-right: 0px;
+} */
+.featured_row {
+  padding-bottom: 50px;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+
+.featured_card_col {
+  margin-top: 12px;
+  text-align: right;
+  border-width: 12px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.featured_card {
+  border-radius: 5px;
+}
+
+.rooms {
+  margin-top: 12px;
+}
+
+.card-title {
+  margin: 0;
+  text-align: right;
+  font-size: 14px;
+}
+.title{
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+  font-weight:  bold;
+  margin-bottom: 6px;
+}
+
+.watermarked {
+  position: relative;
+}
+
+.watermarked {
+  position: relative;
+}
+
+.watermarked:after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  bottom: 25px;
+  background-image: url("https://ajar.website/assets/v1/images/logo.png");
+  background-size: 150px 50px;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+}
+
+.custom-class {
+  top: 0;
+  z-index: 2002;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000ba;
+  border-radius: 3px;
+}
+
+.custom-class h3 {
+  color: dodgerblue;
+}
+.search-advance{
+  text-align: center;
+}
+.buttons{
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.mat-icon-button{
+  margin: 12px;
+  color:white;   
+  box-shadow:0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  }
+.add-icon-button{
+    text-align: center;
+}
+.icon-button{
+  margin-left: 12px;
+}
+.tab-group{
+  text-align: center;
+  margin: auto;
+}
+.template_header{
+  margin-top: 50px;
+  text-align: center;
+}
+.mat-ink-bar.mat-ink-bar{
+height: 3px;}
+.mat-tab-group.mat-accent .mat-ink-bar, .mat-tab-nav-bar.mat-accent .mat-ink-bar{
+  background-color: black;
+
+}

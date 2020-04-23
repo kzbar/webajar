@@ -1,0 +1,74 @@
+<div class="breadcrumb-area-third bg-img bg-overlay-3 jarallax wow fadeInUp" data-wow-delay="200ms"
+    [ngStyle]="{'background-image': getUrl()}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-content mt-100 text-center">
+                    <div class="post-meta">
+                        <a class="post-date">{{blog.bolg_date.seconds * 1000 | date: 'medium'}}</a>
+                    </div>
+                    <h2 class="page-title">{{blog.blog_title}}</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rehomes-news-area blog-details">
+    <div class="container">
+        <div class="blog-details-area">
+            <div class="row justify-content-between">
+                <div class="col-12 col-lg-8">
+
+                    <div style="text-align: right" class="blog-details-text wow fadeInUp" data-wow-delay="200ms">
+                    <div [innerHtml]="safeHtml"></div>
+                    </div>
+
+                    <!-- <div style="padding-left: 15px; padding-right: 15px ; text-align: right" class="row">
+
+                        <div class="col">
+                            <fb-like url='http://ajar.website/blog/{{blog.blog_id}}'></fb-like>
+                        </div>
+                        <div class="top-social-area ml-auto">
+                            <a href="https://web.whatsapp.com/send?text={{blog.blog_title}}  http://ajar.website/blog/{{blog.blog_id}}"
+                                data-action="share/whatsapp/share">
+                                <i style="font-size: 30px" class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+
+                    </div> -->
+
+
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="rehomes-property-sidebar-area">
+                        <div class="properties-single-widget-area mb-80 wow fadeInUp" data-wow-delay="200ms">
+                            <h4 class="widget-title mb-30">Recent News</h4>
+                            <div *ngFor="let itemss of bloglist"
+                                class="properties-single-widget-area mb-80 wow fadeInUp">
+                                <!-- Thumb -->
+                                <div class="single-recent-post d-flex align-items-center">
+                                        <!-- Thumb -->
+                                        <div class="post-thumb">
+                                            <a [routerLink]="['/المدونة-العقارية',itemss.blog_id]" (click) ="setNewItem(itemss)" ><img src="{{itemss.bolg_image}}" alt="" style="height: 100px; width: 100px; max-width: 100px; max-height: 100px;"></a>
+                                        </div>
+                                        <!-- Content -->
+                                        <div class="post-content">
+                                            <!-- Post Meta -->
+                                            <a [routerLink]="['/المدونة-العقارية',itemss.blog_id]" (click) ="setNewItem(itemss)" class="post-title">{{itemss.blog_title}}</a>
+
+                                            <div class="post-meta">
+                                                <a  class="post-author">{{itemss.bolg_date.seconds * 1000 | date: 'medium'}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

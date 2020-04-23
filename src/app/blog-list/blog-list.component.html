@@ -1,0 +1,95 @@
+<div class="breadcrumb-area bg-img bg-overlay-3 wow fadeInUp" data-wow-delay="200ms"
+  style="background-image: url(assets/v2/img/30.jpg);">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div style="text-align: right" class="col-12">
+        <div class="breadcrumb-content">
+          <nav aria-label="breadcrumb">
+          </nav>
+          <h1 class="page-title">المدونةالعقارية</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="rehomes-news-area section-padding-100-60">
+  <div class="container" style="text-align: right">
+    <div class="row justify-content-between">
+      <div class="col-12 col-lg-8">
+        <div *ngFor="let item of list" class="blog-news-area">
+          <div class="single-blog-post-area wow fadeInUp" data-wow-delay="200ms">
+            <!-- Post Thumb -->
+            <a [routerLink]="['/المدونة-العقارية',item.blog_id]"><img style="width: 700px ; height: 300px"
+                src="{{item.bolg_image}}" alt="{{item.blog_title}}"></a>
+            <!-- Post Meta -->
+            <div class="post-meta mt-30 mb-10">
+              <a class="post-author" href="#">{{item.blog_author}}</a>
+              <a class="post-date" href="#">{{item.bolg_date.seconds * 1000 | date: 'medium'}}</a>
+              <!-- <a class="post-comment" href="#">3 Comment</a> -->
+            </div>
+            <a class="single-news-title" [routerLink]="['/المدونة-العقارية',item.blog_id]">{{item.blog_title}}</a>
+            <p>{{item.blog_short_dec | slice : 0 : 150}} <span>....</span><a class="news-btn"
+                [routerLink]="['/المدونة-العقارية',item.blog_id]">أقرا المزيد</a>
+            </p>
+            <!-- <div style="padding-left: 15px; padding-right: 15px ; text-align: right" class="row">
+
+              <div class="col">
+                <fb-like url='http://ajar.website/blog'></fb-like>
+              </div>
+              <div  class="top-social-area ml-auto" >
+                <a href="https://web.whatsapp.com/send?text={{item.blog_title}}  http://ajar.website/blog/{{item.blog_id}}" data-action="share/whatsapp/share">
+                  <i style="font-size: 30px"
+                    class="fab fa-whatsapp"></i>
+                </a>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="rehomes-property-sidebar-area">
+              <div class="properties-single-widget-area mb-80 wow fadeInUp" data-wow-delay="200ms">
+                 <a [routerLink]="['/شقق-للبيع-في-تركيا']" ><h4 class="widget-title mb-30">شقق للبيع</h4></a> 
+                  <div *ngFor="let itemss of listRecentForSale" class="single-recent-post d-flex align-items-center">
+                      <!-- Thumb -->
+                      <div class="properties-post-thumb">
+                          <a [routerLink]="['/شقة-للبيع-في-اسطنبول',itemss.ad_No]"><img style="height: 100px; width: 100px;"
+                            src="{{itemss.ad_DefaultImage}}" alt="{{itemss.ad_Title}}"></a>
+                      </div>
+                      <!-- Post Content -->
+                      <div class="post-content">
+                        <a [routerLink]="['/شقة-للبيع-في-اسطنبول',itemss.ad_No]" class="post-title">{{itemss.ad_Title}}</a>
+                        <p class="properties--location"><i style="color: #0093C4" class="fa fa-map-marker" aria-hidden="true"></i>{{itemss.ad_Address}}
+                        </p>
+                        <p class="properties--rent"><span class="custom-span">{{itemss.ad_Price}}</span></p>
+                      </div>
+                    </div>
+        
+              </div>
+              <div class="properties-single-widget-area mb-80 wow fadeInUp" data-wow-delay="200ms">
+                  <a [routerLink]="['/شقق-للايجار-في-اسطنبول']"><h4 class="widget-title mb-30">شقق للايجار</h4></a>
+                  <div *ngFor="let itemss of listRecentForRent" class="single-recent-post d-flex align-items-center">
+                      <!-- Thumb -->
+                      <div class="properties-post-thumb">
+                          <a [routerLink]="['/شقة-للايجار-في-اسطنبول',itemss.ad_No]" (click) ="setNewItem(itemss)"><img style="height: 100px; width: 100px;"
+                            src="{{itemss.ad_DefaultImage}}" alt="{{itemss.ad_Title}}"></a>
+                      </div>
+                      <!-- Post Content -->
+                      <div class="post-content">
+                        <a [routerLink]="['/شقة-للايجار-في-اسطنبول',itemss.ad_No]" (click) ="setNewItem(itemss)" class="post-title">{{itemss.ad_Title}}</a>
+                        <p class="properties--location"><i style="color: #0093C4" class="fa fa-map-marker" aria-hidden="true"></i>{{itemss.ad_Address}}
+                        </p>
+                        <p class="properties--rent"><span class="custom-span">{{itemss.ad_Price}}</span></p>
+                      </div>
+                    </div>
+
+              </div>
+    
+          </div>
+
+      </div>
+    
+    </div>
+  </div>
+
+  </div>
